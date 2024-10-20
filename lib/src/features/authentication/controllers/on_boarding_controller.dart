@@ -3,10 +3,12 @@ import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
 import 'package:flutter_registration_app/src/features/authentication/models/model_on_boarding.dart';
 import 'package:flutter_registration_app/src/features/authentication/screens/on_boarding/on_boarding_page_widget.dart';
+import 'package:flutter_registration_app/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 import 'package:liquid_swipe/PageHelpers/LiquidController.dart';
 
 class OnBoardingController extends GetxController {
+  static OnBoardingController get find => Get.find();
   RxInt currentPage = 0.obs;
 
   final controller = LiquidController();
@@ -40,7 +42,8 @@ class OnBoardingController extends GetxController {
       ),
     ),
   ];
-  skip() => controller.jumpToPage(page: 2);
+  skip() => Get.to(() => WelcomeScreen());
+  // controller.jumpToPage(page: 2);
   animateToNextSlide() {
     int nextPage = controller.currentPage + 1;
     controller.animateToPage(page: nextPage);
@@ -48,5 +51,4 @@ class OnBoardingController extends GetxController {
 
   onPageChangeCallback(int activePageIndex) =>
       currentPage.value = activePageIndex;
-
 }

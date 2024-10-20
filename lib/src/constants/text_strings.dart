@@ -14,3 +14,13 @@ const String tOnBoardingSubTitle3 = "you can receive notifications to everything
 const String tOnBoardingCounter1 = "1/3";
 const String tOnBoardingCounter2 = "2/3";
 const String tOnBoardingCounter3 = "3/3";
+
+
+// --Welcome Text--
+const String tWelcomeTitle = "There are you";
+const String tWelcomeSubTitle = "Let's put your creativity on the high way and feel all the sides together";
+
+
+// --Generic Text --
+const String tLogin = "Login";
+const String tSingup = "SingUp";

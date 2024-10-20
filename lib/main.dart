@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TeamAppTheme.lightTheme,
-      // darkTheme: TeamAppColors.darkTheme,
-      // themeMode: ThemeMode.system,
+      darkTheme: TeamAppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       home: SplashScreen(),
     );
   }
@@ -43,9 +43,18 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: [
-             Text("Heading", style: Theme.of(context).textTheme.headlineMedium,),
-             Text("Sub-heading", style: Theme.of(context).textTheme.titleMedium,),
-             Text("Paragraph", style: Theme.of(context).textTheme.bodyMedium,),
+            Text(
+              "Heading",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              "Sub-heading",
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            Text(
+              "Paragraph",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
             ElevatedButton(
                 onPressed: () {}, child: const Text("Elvated Button")),
             OutlinedButton(
