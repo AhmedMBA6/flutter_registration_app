@@ -17,10 +17,21 @@ const String tOnBoardingCounter3 = "3/3";
 
 
 // --Welcome Text--
-const String tWelcomeTitle = "There are you";
-const String tWelcomeSubTitle = "Let's put your creativity on the high way and feel all the sides together";
+const String tWelcomeTitle = "Look Who is comming Back!";
+const String tWelcomeSubTitle = "Here you are, Let's put your creativity on the high way and feel all the sides together";
 
 
 // --Generic Text --
 const String tLogin = "Login";
 const String tSingup = "SingUp";
+
+// --Login Screen Text --
+
+const String tLoginTitle = "Welcome Back!";
+const String tLoginSubTitle = "Make it quick, Make it easy";
+const String tRememberMe = "Remember Me?";
+const String tdontHaveAccount = "Don't have account?";
+const String tEmail = "E-Mail";
+const String tPassword = "Password";
+const String tForgotPassword = "ForgotPassword";
+const String tSignInWithGoogle = "Sing-In with Google";

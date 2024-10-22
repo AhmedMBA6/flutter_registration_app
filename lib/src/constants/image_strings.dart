@@ -10,3 +10,6 @@ const String onBoardingImage3 = "assets/images/on_boarding_images/oimage3.png";
 
 // --WelcomeImage==
 const String welcomeImage = "assets/images/welcom_images/welcomeImage.png";
+
+// --LoginImages--
+const String googleLogoImage = "assets/logos/google.png";
