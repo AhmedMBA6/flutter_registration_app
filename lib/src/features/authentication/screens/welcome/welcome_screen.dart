@@ -7,6 +7,7 @@ import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
 import 'package:flutter_registration_app/src/features/authentication/screens/login/login_screen.dart';
+import 'package:flutter_registration_app/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -69,7 +70,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => SignupScreen()),
                           child: Text(tSingup.toUpperCase()),
                         ),
                       ),

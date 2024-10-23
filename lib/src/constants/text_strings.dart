@@ -35,3 +35,11 @@ const String tEmail = "E-Mail";
 const String tPassword = "Password";
 const String tForgotPassword = "ForgotPassword";
 const String tSignInWithGoogle = "Sing-In with Google";
+
+
+// --SignUp Screen Text -
+const String tSignUpTitle = "Get On Board..!";
+const String tSignUpSubTitle = "Create your profile to start your journey..";
+const String tAlreadyHaveAccount = "Already have an account..?";
+const String tFullName = "Full Name";
+const String tPhoneNu = "Phone No";

@@ -17,7 +17,7 @@ class LoginFooterWidget extends StatelessWidget {
           width: double.infinity,
           child: OutlinedButton.icon(
             onPressed: () {},
-            label: Text(tSignInWithGoogle),
+            label: Text(tSignInWithGoogle.toUpperCase()),
             icon: Image(
               image: AssetImage(googleLogoImage),
               width: 20.0,
@@ -35,7 +35,7 @@ class LoginFooterWidget extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
               children: [
                 TextSpan(
-                  text: tSingup,
+                  text: tSingup.toUpperCase(),
                   style: TextStyle(color: Colors.blue),
                 ),
               ]

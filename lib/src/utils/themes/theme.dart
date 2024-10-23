@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registration_app/src/utils/themes/widget_themes/elevated_button_theme.dart';
 import 'package:flutter_registration_app/src/utils/themes/widget_themes/outlined_button_theme.dart';
+import 'package:flutter_registration_app/src/utils/themes/widget_themes/text_field_theme.dart';
 import 'package:flutter_registration_app/src/utils/themes/widget_themes/text_theme.dart';
 
 class TeamAppTheme {
@@ -26,12 +27,14 @@ class TeamAppTheme {
     textTheme: TeamThemeText.lightTextTheme,
     outlinedButtonTheme: TeamOutlinedButtonTheme.lightOutlineButtonTheme,
     elevatedButtonTheme: TeamElevatedButtonTheme.lightElevatedButtonTheme,
+    inputDecorationTheme: TeamTextFieldTheme.lightInputDecurationTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
       textTheme: TeamThemeText.darkTextTheme,
       outlinedButtonTheme: TeamOutlinedButtonTheme.darkOutlineButtonTheme,
       elevatedButtonTheme: TeamElevatedButtonTheme.darkElevatedButtonTheme,
+      inputDecorationTheme: TeamTextFieldTheme.darkInputDecurationTheme,
       // brightness: Brightness.dark,
       colorScheme: ColorScheme.fromSwatch(
         primarySwatch:

@@ -18,9 +18,8 @@ class LoginForm extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.person_outline_outlined),
-                labelText: tEmail,
+                label: Text(tEmail),
                 hintText: tEmail,
-                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(
@@ -30,8 +29,7 @@ class LoginForm extends StatelessWidget {
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.fingerprint),
                   hintText: tPassword,
-                  labelText: tPassword,
-                  border: OutlineInputBorder(),
+                  label: Text(tPassword),
                   suffixIcon: IconButton(
                     onPressed: () {},
                     icon: Icon(Icons.remove_red_eye_sharp),

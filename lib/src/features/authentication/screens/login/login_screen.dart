@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registration_app/src/constants/colors.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
-import 'package:flutter_registration_app/src/features/authentication/screens/login/login_footer_widgit.dart';
-import 'package:flutter_registration_app/src/features/authentication/screens/login/login_form_widget.dart';
-import 'package:flutter_registration_app/src/features/authentication/screens/login/login_header_widget.dart';
+import 'package:flutter_registration_app/src/features/authentication/screens/login/widgets/login_footer_widgit.dart';
+import 'package:flutter_registration_app/src/features/authentication/screens/login/widgets/login_form_widget.dart';
+import 'package:flutter_registration_app/src/features/authentication/screens/login/widgets/login_header_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -11,7 +11,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
-    final size = mediaQuery.size;
     var brightness = mediaQuery.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
     return SafeArea(
@@ -23,7 +22,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                LoginHeaderWidget(size: size),
+                LoginHeaderWidget(),
                 LoginForm(),
                 LoginFooterWidget(),
               ],
