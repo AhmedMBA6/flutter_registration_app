@@ -43,3 +43,11 @@ const String tSignUpSubTitle = "Create your profile to start your journey..";
 const String tAlreadyHaveAccount = "Already have an account..?";
 const String tFullName = "Full Name";
 const String tPhoneNu = "Phone No";
+
+// --Forgot password text --
+const String tForgotPasswordTitle = "Make Selection";
+const String tForgotPasswordSubTitle = "Select one of the option below to reset your password..";
+const String tResetViaEmail = "Reset via E-mail Verification.";
+const String tResetViaPhone = "Reset via Phone Number Verification.";
+const String tForgotPhoneSubTitle = "Enter your registered phone number to receive OTP";
+const String tForgotEmailSubTitle = "Enter your registered email to receive OTP";

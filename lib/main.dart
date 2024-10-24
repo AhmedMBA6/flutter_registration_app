@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registration_app/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:flutter_registration_app/src/utils/themes/theme.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-
+import 'package:get/get.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,6 +14,8 @@ class MyApp extends StatelessWidget {
       theme: TeamAppTheme.lightTheme,
       darkTheme: TeamAppTheme.darkTheme,
       themeMode: ThemeMode.system,
+      defaultTransition: Transition.leftToRightWithFade,
+      transitionDuration: Duration(milliseconds: 500),
       home: SplashScreen(),
     );
   }

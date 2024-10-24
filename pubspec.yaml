@@ -86,6 +86,7 @@ flutter:
     - assets/images/on_boarding_images/
     - assets/images/welcom_images/
     - assets/logos/
+    - assets/images/forgot_password_images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
