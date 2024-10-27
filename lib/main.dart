@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registration_app/src/features/authentication/screens/splash_screen/splash_screen.dart';
-import 'package:flutter_registration_app/src/features/core/screens/dashboard/dashboard.dart';
 import 'package:flutter_registration_app/src/utils/themes/theme.dart';
 import 'package:get/get.dart';
 void main() => runApp(const MyApp());
