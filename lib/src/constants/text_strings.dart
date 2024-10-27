@@ -57,3 +57,13 @@ const String tForgotEmailSubTitle = "Enter your registered email to receive OTP"
 const String tOtpTitle = "CO\nDE";
 const String tOtpSubTitle = "Verification";
 const String tOtpMessage = "Enter the verification code sent at ";
+
+// --Dashboard Screen Text--
+const String tDashboardTitle = "Hey, Welcome to you in Ours";
+const String tDashboardHeading = "Exploar courses";
+const String tDashboardSearch = "Search...";
+const String tDashboardBannerTitle1 = "Advanced or Beginners";
+const String tDashboardBannerTitle2 = "Java";
+const String tDashboardBannerSubTitle = "8 lessons";
+const String tDashboardButton = "View All";
+const String tDashboardTopCourses = "Top Courses";
