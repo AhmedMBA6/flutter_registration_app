@@ -3,15 +3,20 @@ import 'package:flutter_registration_app/src/common_widgets/form/form_header_wid
 import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
+import 'package:flutter_registration_app/src/features/authentication/controllers/singup_controller.dart';
+import 'package:get/get.dart';
 
 class SingUpFormWidget extends StatelessWidget {
-  const SingUpFormWidget({
+  final _formKey = GlobalKey<FormState>();
+   SingUpFormWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SingUpController());
     return Form(
+      key: _formKey,
       child: Column(
         children: [
           FormHeaderWidget(
@@ -25,6 +30,7 @@ class SingUpFormWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextFormField(
+                 // controller: controller.fullName,
                   decoration: InputDecoration(
                     label: Text(tFullName),
                     prefixIcon: Icon(Icons.person_outline_rounded),
@@ -34,6 +40,7 @@ class SingUpFormWidget extends StatelessWidget {
                   height: formHeight - 20,
                 ),
                 TextFormField(
+                  controller: controller.email,
                   decoration: InputDecoration(
                     label: Text(tEmail),
                     prefixIcon: Icon(Icons.email_outlined),
@@ -43,6 +50,7 @@ class SingUpFormWidget extends StatelessWidget {
                   height: formHeight - 20,
                 ),
                 TextFormField(
+                  controller: controller.phoneNu,
                   decoration: InputDecoration(
                       label: Text(tPhoneNu), prefixIcon: Icon(Icons.numbers)),
                 ),
@@ -50,6 +58,7 @@ class SingUpFormWidget extends StatelessWidget {
                   height: formHeight - 20,
                 ),
                 TextFormField(
+                  controller: controller.password,
                   decoration: InputDecoration(
                       label: Text(tPassword),
                       prefixIcon: Icon(Icons.fingerprint)),
@@ -60,7 +69,14 @@ class SingUpFormWidget extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        SingUpController.instance.registerUser(
+                          controller.email.text.trim(),
+                          controller.password.text.trim(),
+                        );
+                      }
+                    },
                     child: Text(tSingup),
                   ),
                 ),
@@ -92,9 +108,8 @@ class SingUpFormWidget extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                       children: [
                         TextSpan(
-                          text: tLogin.toUpperCase(),
-                          style: TextStyle(color: Colors.blue)
-                        ),
+                            text: tLogin.toUpperCase(),
+                            style: TextStyle(color: Colors.blue)),
                       ]),
                 ),
               )
