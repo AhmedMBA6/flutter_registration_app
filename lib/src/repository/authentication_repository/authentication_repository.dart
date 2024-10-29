@@ -10,6 +10,7 @@ class AuthenticationRepository extends GetxController {
   // variables
   final _auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
+  var verificationId = "".obs;
 
   @override
   void onReady() {
@@ -30,7 +31,9 @@ class AuthenticationRepository extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-          firebaseUser.value != null ? Get.offAll(() => Dashboard()) : Get.to(() => WelcomeScreen());
+      firebaseUser.value != null
+          ? Get.offAll(() => Dashboard())
+          : Get.to(() => WelcomeScreen());
     } on FirebaseAuthException catch (e) {
       final ex = SignupEmailPasswordFaliure.code(e.code);
       print('Firebase Auth Exception - ${ex.message}');
@@ -45,8 +48,36 @@ class AuthenticationRepository extends GetxController {
   Future<void> loginWithEmailandPassword(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-    } on FirebaseAuthException {} catch (e) {}
+    } catch (_) {}
   }
 
   Future<void> logout() async => await _auth.signOut();
+// phone ver
+  Future<void> phoneAuthentication(String phoneNu) async {
+    await _auth.verifyPhoneNumber(
+      verificationCompleted: (credential) async {
+        await _auth.signInWithCredential(credential);
+      },
+      phoneNumber: phoneNu,
+      verificationFailed: (e) {
+        if (e.code == "invalid-phone-number") {
+          Get.snackbar('Error', 'The provided phone number is not valid');
+        } else {
+           Get.snackbar('Error', 'Sonething went wrong, Try aagain');
+        }
+      },
+      codeSent: (verificationId, resendToken) {
+        this.verificationId.value = verificationId;
+      },
+      codeAutoRetrievalTimeout: (verificationId) {
+        this.verificationId.value = verificationId;
+      },
+    );
+  }
+
+  Future<bool> verifyOTP(String otp) async {
+   var credentials =  await _auth.signInWithCredential(PhoneAuthProvider.credential(
+        verificationId: verificationId.value, smsCode: otp));
+        return credentials.user != null ? true : false;
+  }
 }

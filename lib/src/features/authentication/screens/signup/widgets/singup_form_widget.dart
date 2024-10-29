@@ -4,11 +4,12 @@ import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
 import 'package:flutter_registration_app/src/features/authentication/controllers/singup_controller.dart';
+import 'package:flutter_registration_app/src/features/authentication/screens/forgot_password/forgot_password_otp/otp_screen.dart';
 import 'package:get/get.dart';
 
 class SingUpFormWidget extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
-   SingUpFormWidget({
+  static final _formKey = GlobalKey<FormState>();
+  const SingUpFormWidget({
     super.key,
   });
 
@@ -30,7 +31,7 @@ class SingUpFormWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextFormField(
-                 // controller: controller.fullName,
+                  controller: controller.fullName,
                   decoration: InputDecoration(
                     label: Text(tFullName),
                     prefixIcon: Icon(Icons.person_outline_rounded),
@@ -71,10 +72,15 @@ class SingUpFormWidget extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        SingUpController.instance.registerUser(
-                          controller.email.text.trim(),
-                          controller.password.text.trim(),
-                        );
+                        // SingUpController.instance.registerUser(
+                        //   controller.email.text.trim(),
+                        //   controller.password.text.trim(),
+                        // );
+
+                        //phone sign up
+                        SingUpController.instance.phoneAuthentication(
+                            controller.phoneNu.text.trim());
+                        Get.to(() => OtpScreen());
                       }
                     },
                     child: Text(tSingup),

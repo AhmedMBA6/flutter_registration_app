@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_registration_app/firebase_options.dart';
-import 'package:flutter_registration_app/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:flutter_registration_app/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:flutter_registration_app/src/utils/themes/theme.dart';
 import 'package:get/get.dart';

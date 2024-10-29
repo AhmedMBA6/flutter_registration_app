@@ -15,4 +15,9 @@ class SingUpController extends GetxController {
     AuthenticationRepository.instance
         .createUserWithEmailandPassword(email, password);
   }
+
+  // get the phone number from the user and pass it to auth
+  void phoneAuthentication(String phoneNu){
+    AuthenticationRepository.instance.phoneAuthentication(phoneNu);
+  }
 }

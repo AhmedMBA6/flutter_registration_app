@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-registration-a.appspot.com',
     iosBundleId: 'com.example.flutterRegistrationApp',
   );
+
 }
