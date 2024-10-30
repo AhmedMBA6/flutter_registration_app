@@ -5,11 +5,12 @@ class TeamTextFieldTheme {
   TeamTextFieldTheme._();
 
   static InputDecorationTheme lightInputDecurationTheme = InputDecorationTheme(
-    border: OutlineInputBorder(),
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(100),),
     prefixIconColor: teamSecondaryColor,
     suffixIconColor: teamSecondaryColor,
     floatingLabelStyle: TextStyle(color: teamSecondaryColor),
     focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(100),
       borderSide: BorderSide(
         width: 2,
         color: teamSecondaryColor,
@@ -18,11 +19,12 @@ class TeamTextFieldTheme {
   );
 
   static InputDecorationTheme darkInputDecurationTheme = InputDecorationTheme(
-    border: OutlineInputBorder(),
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
     prefixIconColor: teamPrimaryColor,
     suffixIconColor: teamPrimaryColor,
     floatingLabelStyle: TextStyle(color: teamPrimaryColor),
     focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(100),
       borderSide: BorderSide(
         width: 2,
         color: teamPrimaryColor,

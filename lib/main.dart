@@ -4,11 +4,15 @@ import 'package:flutter_registration_app/firebase_options.dart';
 import 'package:flutter_registration_app/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:flutter_registration_app/src/utils/themes/theme.dart';
 import 'package:get/get.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 
-void main() {
+Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+ await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then((value) => Get.put(AuthenticationRepository()));
+  await FirebaseAppCheck.instance.activate(
+    appleProvider: AppleProvider.debug,
+  );
   runApp(const MyApp());
 }
 

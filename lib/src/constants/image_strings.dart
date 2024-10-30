@@ -25,3 +25,7 @@ const String bannerImage2 = "assets/images/dashboard_images/dash-2.png";
 const String topCourseImage1 = "assets/images/dashboard_images/dash-3.png";
 const String topCourseImage2 = "assets/images/dashboard_images/dash-4.png";
 const String bookMarkImage = "assets/images/dashboard_images/bookmark.png";
+
+
+//-- profile images --
+const String profileImage = "assets/images/splash_images/splash_image2.png";

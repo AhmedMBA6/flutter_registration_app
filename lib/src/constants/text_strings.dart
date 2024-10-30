@@ -67,3 +67,24 @@ const String tDashboardBannerTitle2 = "Java";
 const String tDashboardBannerSubTitle = "8 lessons";
 const String tDashboardButton = "View All";
 const String tDashboardTopCourses = "Top Courses";
+
+
+
+// -- Profile Screen Text -- \
+const String tProfile = "Profile";
+const String tEditProfile = "Edit Profile";
+const String tLogoutDialogHeading = "Logout";
+const String tProfileHeading = "Defualt Username";
+const String tProfileSubHeading = "defualt_user12@gmail.com";
+
+// Menu profile screen
+const String tMenu1 = "Settings";
+const String tMenu2 = "Billing Details";
+const String tMenu3 = "User Management";
+const String tMenu4 = "Information";
+const String tMenu5 = "Log Out";
+
+// update Profile screen
+const String tDelete = "Delete";
+const String tJoined = "Joined";
+const String tJoinedAt = "22 April 2023";

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_registration_app/src/constants/colors.dart';
 import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
+import 'package:flutter_registration_app/src/features/core/screens/profile/profile_screen.dart';
 import 'package:flutter_registration_app/src/repository/authentication_repository/authentication_repository.dart';
+import 'package:get/get.dart';
 
 class DashboardAppBar extends StatelessWidget implements PreferredSize {
   const DashboardAppBar({
@@ -34,7 +36,9 @@ class DashboardAppBar extends StatelessWidget implements PreferredSize {
             color: teamCardBgColor,
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => ProfileScreen());
+            },
             icon: Image(image: AssetImage(userProfileImage)),
           ),
         ),

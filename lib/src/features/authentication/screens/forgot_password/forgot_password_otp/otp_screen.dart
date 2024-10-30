@@ -4,7 +4,7 @@ import 'package:flutter_registration_app/src/constants/colors.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
 import 'package:flutter_registration_app/src/features/authentication/controllers/otp_controller.dart';
-import 'package:get/get.dart';
+//import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OtpScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class OtpScreen extends StatelessWidget {
     var mediaQuery = MediaQuery.of(context);
     var brightness = mediaQuery.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
-    var otpController = Get.put(OtpController());
+    // var otpController = Get.put(OtpController());
     var otp;
     return Scaffold(
       backgroundColor: isDarkMode ? teamSecondaryColor : Colors.white,

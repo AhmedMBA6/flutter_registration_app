@@ -31,15 +31,14 @@ class LoginFooterWidget extends StatelessWidget {
           onPressed: () {},
           child: Text.rich(
             TextSpan(
-              text: tdontHaveAccount,
-              style: Theme.of(context).textTheme.titleMedium,
-              children: [
-                TextSpan(
-                  text: tSingup.toUpperCase(),
-                  style: TextStyle(color: Colors.blue),
-                ),
-              ]
-            ),
+                text: tdontHaveAccount,
+                style: Theme.of(context).textTheme.titleMedium,
+                children: [
+                  TextSpan(
+                    text: tSingup.toUpperCase(),
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ]),
           ),
         )
       ],
