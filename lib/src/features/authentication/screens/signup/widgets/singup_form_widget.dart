@@ -4,7 +4,7 @@ import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
 import 'package:flutter_registration_app/src/features/authentication/controllers/singup_controller.dart';
-import 'package:flutter_registration_app/src/features/authentication/screens/forgot_password/forgot_password_otp/otp_screen.dart';
+import 'package:flutter_registration_app/src/features/authentication/models/user_model.dart';
 import 'package:get/get.dart';
 
 class SingUpFormWidget extends StatelessWidget {
@@ -78,9 +78,17 @@ class SingUpFormWidget extends StatelessWidget {
                         // );
 
                         //phone sign up
-                        SingUpController.instance.phoneAuthentication(
-                            controller.phoneNu.text.trim());
-                        Get.to(() => OtpScreen());
+                        // SingUpController.instance.phoneAuthentication(
+                        //     controller.phoneNu.text.trim());
+
+                        // pass the data of the user to controller
+                        final user = UserModel(
+                          fullName: controller.fullName.text.trim(),
+                          email: controller.email.text.trim(),
+                          phoneNu: controller.phoneNu.text.trim(),
+                          password: controller.password.text.trim(),
+                        );
+                        SingUpController.instance.createUser(user);
                       }
                     },
                     child: Text(tSingup),
