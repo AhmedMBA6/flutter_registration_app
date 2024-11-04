@@ -3,6 +3,7 @@ import 'package:flutter_registration_app/src/constants/colors.dart';
 import 'package:flutter_registration_app/src/constants/image_strings.dart';
 import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
+import 'package:flutter_registration_app/src/features/core/screens/profile/find_friends.dart';
 import 'package:flutter_registration_app/src/features/core/screens/profile/update_profile_screen.dart';
 import 'package:flutter_registration_app/src/features/core/screens/profile/widgets/profile_menu.dart';
 import 'package:get/get.dart';
@@ -134,6 +135,9 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Get.to(() => FindFriends());
+      }, child: Icon(Icons.person_2_outlined),),
     );
   }
 }
