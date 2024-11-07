@@ -34,6 +34,14 @@ class UpdateProfileScreen extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
                   UserModel userData = snapshot.data as UserModel;
+
+                  //controllers
+                  final email = TextEditingController(text: userData.email);
+                  final fullName = TextEditingController(text: userData.fullName);
+                  final phoneNu = TextEditingController(text: userData.phoneNu);
+                  final password = TextEditingController(text: userData.password);
+
+
                   return Column(
                     children: [
                       Stack(
@@ -73,7 +81,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           child: Column(
                         children: [
                           TextFormField(
-                            initialValue: userData.fullName,
+                            controller: fullName,
                             decoration: InputDecoration(
                               label: Text(tFullName),
                               prefixIcon: Icon(Icons.person_outline_rounded),
@@ -83,7 +91,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             height: formHeight - 20,
                           ),
                           TextFormField(
-                            initialValue: userData.email,
+                            controller: email,
                             decoration: InputDecoration(
                               label: Text(tEmail),
                               prefixIcon: Icon(Icons.person_outline_rounded),
@@ -93,7 +101,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             height: formHeight - 20,
                           ),
                           TextFormField(
-                            initialValue: userData.phoneNu,
+                            controller: phoneNu,
                             decoration: InputDecoration(
                               label: Text(tPhoneNu),
                               prefixIcon: Icon(Icons.person_outline_rounded),
@@ -103,7 +111,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             height: formHeight - 20,
                           ),
                           TextFormField(
-                            initialValue: userData.password,
+                            controller: password,
                             decoration: InputDecoration(
                               label: Text(tPassword),
                               prefixIcon: Icon(Icons.person_outline_rounded),
@@ -115,8 +123,14 @@ class UpdateProfileScreen extends StatelessWidget {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
-                                onPressed: () {
-                                  Get.to(() => UpdateProfileScreen());
+                                onPressed: () async {
+                                  final userData = UserModel(
+                                    fullName: fullName.text.trim(),
+                                    email: email.text.trim(),
+                                    phoneNu: phoneNu.text.trim(),
+                                    password: password.text.trim(),
+                                  );
+                                  await controller.updateRecord(userData);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: teamPrimaryColor,
@@ -165,10 +179,14 @@ class UpdateProfileScreen extends StatelessWidget {
                       ))
                     ],
                   );
-                }else if (snapshot.hasError){
-                  return Center(child:  Text(snapshot.error.toString()),);
-                }else{
-                  return Center(child: Text("Something went wronge"),);
+                } else if (snapshot.hasError) {
+                  return Center(
+                    child: Text(snapshot.error.toString()),
+                  );
+                } else {
+                  return Center(
+                    child: Text("Something went wronge"),
+                  );
                 }
               } else {
                 return Center(

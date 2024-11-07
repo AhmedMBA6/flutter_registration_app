@@ -7,7 +7,7 @@ class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
   final _db = FirebaseFirestore.instance;
-  createUser(UserModel user) async {
+  Future<void> createUser(UserModel user) async {
     await _db
         .collection("Users")
         .add(user.toJson())
@@ -20,8 +20,7 @@ class UserRepository extends GetxController {
             colorText: Colors.green,
           ),
           // ignore: body_might_complete_normally_catch_error
-        )
-        .catchError((error, stackTrace) {
+        ).catchError((error, stackTrace) {
       Get.snackbar(
         "Error",
         "Somthing went wrong, Try again. ",
@@ -44,5 +43,10 @@ class UserRepository extends GetxController {
     final snapshot = await _db.collection("Users").get();
     final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).toList();
     return userData;
+  }
+
+  // update user data
+  Future<void> updateUserRec(UserModel user) async{
+    await _db.collection("Users").doc(user.id).update(user.toJson());
   }
 }
