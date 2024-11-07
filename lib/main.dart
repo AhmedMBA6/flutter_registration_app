@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_registration_app/firebase_options.dart';
 import 'package:flutter_registration_app/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:flutter_registration_app/src/utils/themes/theme.dart';
@@ -7,12 +8,19 @@ import 'package:get/get.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 
 Future<void> main() async{
-  WidgetsFlutterBinding.ensureInitialized();
+ WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+ //Await splash until other items load
+ FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  // initialize firebase and Auth Repo
  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then((value) => Get.put(AuthenticationRepository()));
   await FirebaseAppCheck.instance.activate(
     appleProvider: AppleProvider.debug,
   );
+
+  //main app starts here
   runApp(const MyApp());
 }
 
