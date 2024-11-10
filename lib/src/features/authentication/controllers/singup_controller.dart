@@ -27,10 +27,10 @@ GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
   Future<void> createUser() async {
     try {
       isLoading.value = true;
-      if (!signupFormKey.currentState!.validate()) {
-        isLoading.value = false;
-        return;
-      }
+      // if (!signupFormKey.currentState!.validate()) {
+      //   isLoading.value = false;
+      //   return;
+      // }
 
       /// For Phone Authentication
       // SingUpController.instance.phoneAuthentication(controller.phoneNu.text.trim());

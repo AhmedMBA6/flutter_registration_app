@@ -111,3 +111,8 @@ const String tEmailSent = "Hurry!!  Email on way";
 const String tCongrats = "Congratulations";
 const String tEmailLinkToResetPassword = "Email Link To Reset Password";
 const String tAccountCreateVer = "Account Create Verify Email";
+
+// --Social login text --
+const String tConnectWith = "Connect With";
+const String tGoogle = "Google";
+const String tFacebook = "Facebook";

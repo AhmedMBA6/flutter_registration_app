@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_registration_app/src/constants/image_strings.dart';
-import 'package:flutter_registration_app/src/constants/sizes.dart';
 import 'package:flutter_registration_app/src/constants/text_strings.dart';
+import 'package:flutter_registration_app/src/utils/socials/social_footer.dart';
 
 class LoginFooterWidget extends StatelessWidget {
   const LoginFooterWidget({
@@ -13,20 +12,21 @@ class LoginFooterWidget extends StatelessWidget {
     return Column(
       children: [
         Text("OR"),
-        SizedBox(
-          width: double.infinity,
-          child: OutlinedButton.icon(
-            onPressed: () {},
-            label: Text(tSignInWithGoogle.toUpperCase()),
-            icon: Image(
-              image: AssetImage(googleLogoImage),
-              width: 20.0,
-            ),
-          ),
-        ),
-        SizedBox(
-          height: formHeight - 20,
-        ),
+        SocialFooter(),
+        // SizedBox(
+        //   width: double.infinity,
+        //   child: OutlinedButton.icon(
+        //     onPressed: () {},
+        //     label: Text(tSignInWithGoogle.toUpperCase()),
+        //     icon: Image(
+        //       image: AssetImage(googleLogoImage),
+        //       width: 20.0,
+        //     ),
+        //   ),
+        // ),
+        // SizedBox(
+        //   height: formHeight - 20,
+        // ),
         TextButton(
           onPressed: () {},
           child: Text.rich(

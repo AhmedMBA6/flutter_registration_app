@@ -36,7 +36,7 @@ class LoginController extends GetxController{
   }
 
   /// [GoogleSignInAuthentication]
-  Future<void> GoogleSignIn() async{
+  Future<void> googleSignIn() async{
     try {
       isGoogleLoading.value = true;
       final auth = AuthenticationRepository.instance;

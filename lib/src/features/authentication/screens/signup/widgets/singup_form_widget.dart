@@ -96,7 +96,9 @@ class SingUpFormWidget extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   label: Text(tSignInWithGoogle.toUpperCase()),
                   icon: Image(
                     image: AssetImage(googleLogoImage),

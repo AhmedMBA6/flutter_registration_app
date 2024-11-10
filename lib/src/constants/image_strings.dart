@@ -13,6 +13,7 @@ const String welcomeImage = "assets/images/welcom_images/welcomeImage.png";
 
 // --LoginImages--
 const String googleLogoImage = "assets/logos/google.png";
+const String facebookLogoImage = "assets/logos/facebookLogo.png";
 
 // --Forgot Password images--
 const String forgotPasswordImage = "assets/images/forgot_password_images/ForgotPassword.png";
